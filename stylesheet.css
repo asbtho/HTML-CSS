@@ -1,0 +1,572 @@
+
+/** {
+	border: 1px dashed red;
+}*/
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+ 
+	.fade-in.one {
+	-webkit-animation-delay: 0.1s;
+	-moz-animation-delay: 0.1s;
+	animation-delay: 0.1s;
+	}
+ 
+	.fade-in.two {
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay:0.7s;
+	animation-delay: 0.7s;
+	}
+
+@font-face {
+    font-family: 'walkway_boldregular';
+    src: url("src/font/Walkway_Bold-webfont.eot");
+    src: url("src/font/Walkway_Bold-webfont.eot?#iefix") format('embedded-opentype'),
+         url("src/font/Walkway_Bold-webfont.woff") format('woff'),
+         url("src/font/Walkway_Bold-webfont.ttf") format('truetype'),
+         url("src/font/Walkway_Bold-webfont.svg#walkway_boldregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+	font-family: walkway_boldregular, sans-serif; 
+}
+
+#html_code {
+	width: 1920px;
+	height: 1080px;
+}
+
+@media only screen and (max-device-width: 1024px){
+	.header {position: absolute !important;}
+}
+
+.header {
+	/*border:1px solid green;*/
+	position:fixed;
+	background-color:white;
+	height: 100px;
+	width: 800px;
+	left:50%;
+	margin-left:-400px;
+	margin-top:-10px;
+	z-index:1;
+	border-bottom:1px solid black;
+   	box-shadow: 0 8px 10px -10px #000000; /* horizontal vertical blur spread color */
+}
+
+.content {
+	/*border:1px solid green;*/
+	position:absolute;
+	height:90px;
+	width:798px;
+	margin-top: 4px;
+
+	}
+
+.logo {
+	position:relative;
+	margin-top:60px;
+	float:left;
+}
+
+#content-slider {  
+    width: 800px;  
+    overflow: hidden; 
+    height: 1000px;
+    border-top: 1px solid white;
+	position:relative;
+	left: 50%;
+	margin-left:-400px;  
+}  
+      
+#content-slider-inside {  
+ 	list-style: none; 
+ 	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+    height: 1020px;      // these 3 lines  
+    overflow: scroll;   // help Opera  
+    overflow-y: hidden; // behave
+}
+      
+    #content-slider-inside li {  
+        width: 800px;  
+        height: 1000px;
+    }  
+
+.navigation {
+	/*border: 1px solid green;*/
+	position:relative;
+	float:right;
+	width: 500px;
+	height: 20px;
+	margin: 68px 0 0 0;
+}
+
+	.navigation ul {
+		font-family:walkway_boldregular, sans-serif;
+		font-size: 17px;
+		position:relative;
+		float:right;
+		margin-top: 0;
+	}
+
+		.navigation ul li {
+			position:relative;
+			display:inline-block;
+			margin-left: 50px;
+		}
+
+			.navigation ul li a:hover {
+				color:#6D929B;
+			}
+
+a:link, a:visited {
+	color:black;
+	text-decoration: none;
+}
+
+a.current {
+	color:#6D929B;
+}
+
+.main_content {
+	border-top: 1px solid white;
+	position:relative;
+	left: 50%;
+	margin-left:-400px;
+	width:800px;
+}
+
+.keyboard {
+	position:absolute;
+	margin-top: 120px;
+	width:300px;
+	height:300px;
+	background-image: url("src/keyboard_medium.png");
+	background-repeat: no-repeat;
+	background-position: -50px -200px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.home_text {
+	font-family:walkway_boldregular;
+	font-size: 15px;
+	background-color: white;
+	position:relative;
+	word-wrap: break-word;
+	margin: 340px 300px 1px 225px;
+	padding: 1px 0px 5px 15px;
+	border-radius: 10px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	box-shadow: -10px -10px 10px -10px #000000; /* horizontal vertical blur spread color */
+}
+
+	.home_text p {
+		text-align: left;
+	}
+
+.image_content {
+	position: relative;
+	margin-top: 120px;
+	overflow: hidden;
+}
+
+.image_frame {
+	position: relative;
+	display: inline-block;
+	overflow:hidden;
+	margin: 0px 5px 10px 5px;
+	background-color: black;
+	width:254px;
+	height:254px;
+	border-radius: 10px;
+}
+
+	.image_frame:hover {
+		opacity: 0.7;
+	}
+
+	.image_frame img {
+		position:absolute;
+    	top: -9999px;
+    	bottom: -9999px;
+    	left: -9999px;
+    	right: -9999px;
+    	margin: auto;
+	}
+
+.stylesheet_image {
+	text-align: right;
+	margin-top: 120px;
+	position: relative;
+	float:left;
+}
+
+	.stylesheet_image:hover {
+		opacity: 0.8;
+	}
+
+	.stylesheet_image h2 {
+		position: absolute; 
+   		top: 4px; 
+   		left: 0px; 
+   		width: 100%; 
+   		background-color: rgba(255, 255, 255, 0.6);
+	}
+
+.html_image {
+	text-align: left;
+	margin-top: 120px;
+	position: relative;
+	float:right;
+}
+	
+	.html_image:hover {
+		opacity: 0.8;
+	}
+
+	.html_image h2 {
+		position: absolute;
+		top: 4px; 
+   		left: 0px; 
+   		width: 100%; 
+   		background-color: rgba(255, 255, 255, 0.6);
+	}
+
+.steam {
+	display: inline-block;
+	position:relative;
+	left: 90%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.steam a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/steam_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 2px 1px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.steam a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/steam_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 2px -31px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.battlelog {
+	display: inline-block;
+	position:relative;
+	left: 78%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.battlelog a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/battlelog_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 1px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.battlelog a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/battlelog_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 1px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.codecademy {
+	display: inline-block;
+	position:relative;
+	left: 66%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.codecademy a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/codecademy_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 2px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.codecademy a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/codecademy_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 2px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.github {
+	display: inline-block;
+	position:relative;
+	left: 54%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.github a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/github_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 1px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.github a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/github_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 1px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.twitter {
+	display: inline-block;
+	position:relative;
+	left: 42%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.twitter a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/twitter_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 2px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.twitter a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/twitter_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 2px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.vimeo {
+	display: inline-block;
+	position:relative;
+	left: 30%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.vimeo a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/vimeo_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.vimeo a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/vimeo_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 0px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.twitch {
+	display: inline-block;
+	position:relative;
+	left: 18%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.twitch a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/twitch_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 1px 0px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.twitch a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/twitch_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 1px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.rsi {
+	display: inline-block;
+	position:relative;
+	left: 6%;
+	width:54px;
+	height:40px;
+	margin-top: 10px;
+	margin-left:-25px;
+}
+
+	.rsi a {
+		border: 1px solid black;
+		position:absolute;
+		width:42px;
+		height:30px;
+		background-image: url("src/rsi_sprite.png");
+		background-repeat: no-repeat;
+		background-position: 0px -1px;
+		background-color:white;
+		border-radius: 10px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
+
+		.rsi a:hover {
+			border: 1px solid black;
+			position:absolute;
+			width:42px;
+			height:30px;
+			background-image: url("src/rsi_sprite.png");
+			background-repeat: no-repeat;
+			background-position: 0px -30px;
+			background-color:black;
+			border-radius: 10px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+		}
+
+.bottom {
+	/*border: 1px solid black;*/
+	position:relative;
+	margin:auto;
+	width:800px;
+	height:50px;
+	border-top:1px solid black;
+	box-shadow: 0 -10px 10px -10px #000000; /* horizontal vertical blur spread color */
+}
+
+
+
